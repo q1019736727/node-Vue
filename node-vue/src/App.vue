@@ -1,18 +1,16 @@
 <template>
   <div id="app">
     <topNav></topNav>
-    <publist></publist>
+    <router-view name="main"></router-view>
   </div>
 </template>
 
 <script>
   import topNav from './components/Topnav'
-  import publist from './components/Publishlist'
 export default {
   name: 'App',
   components:{
-    topNav,
-    publist
+    topNav
   }
 }
 </script>
