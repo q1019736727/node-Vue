@@ -16,7 +16,9 @@
           </li>
           <li v-for="item in postlistData">
               <div>
-                <img :src="item.author.avatar_url" alt="">
+                <router-link :to="{name:'user-page',params:{username: item.author.loginname}}">
+                  <img :src="item.author.avatar_url" alt="">
+                </router-link>
                 <span class="views">
                   <span>{{item.reply_count}}/</span><span>{{item.visit_count}}</span>
                 </span>
@@ -102,7 +104,7 @@
 
 <style lang="scss" scoped>
   .publish-wrapper{
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     overflow: hidden;
     background: white;
@@ -173,6 +175,9 @@
               width: 30px;
               height: 30px;
               margin-left: 10px;
+              &:hover{
+                cursor: pointer;
+              }
             }
             .top,.good{
               background: #80bd01;

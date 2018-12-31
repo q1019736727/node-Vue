@@ -18,7 +18,7 @@
         <li v-for="(item,index) in post.replies">
           <div class="single-reply">
             <section class="replyInfo">
-              <router-link :to="{name: 'user-page'}">
+              <router-link :to="{name: 'user-page',params:{username:item.author.loginname}}">
                 <img :src="item.author.avatar_url">
               </router-link>
               <span class="replyname">{{item.author.loginname}}</span>
@@ -47,6 +47,12 @@
           this.isLoading = true
           this.getData()
         },
+        watch:{
+          //监听路由
+          $route( to , from ){
+            this.getData()
+          }
+        },
         methods:{
           getData:function() {
               this.$http.get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
@@ -68,15 +74,20 @@
     max-width: 800px;
     background: white;
     margin: 15px auto;
+    float: left;
     .loading{
       display: none;
       height: calc(100vh - 50px);
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 800px;
       img{
         width: 300px;
       }
+    }
+    .publish-content{
+      width: 800px;
     }
     .title{
       padding: 20px 10px 0 10px;

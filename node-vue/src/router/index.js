@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Publish from '../components/Publishlist'
 import Postdetail from '../components/Postdetail'
 import Userinfo from '../components/UserInfo'
+import Slider from '../components/Slider'
 Vue.use(Router)
 
 export default new Router({
@@ -16,14 +17,15 @@ export default new Router({
     },
     {
       name:'post-detail',
-      path:'/topic/:id&author=:name',//需要传递参数id和name,注意在
+      path:'/topic/:id&:name',//需要传递参数id和name,注意在
       components:{
-        main: Postdetail//
+        main: Postdetail,
+        slider: Slider
       }
     },
     {
       name:'user-page',
-      path:'/user',
+      path:'/user/:username',
       components:{
         main:Userinfo
       }

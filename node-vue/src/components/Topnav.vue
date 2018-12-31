@@ -1,7 +1,9 @@
 <template>
   <div class="topNav">
     <a href="javascript:void(0)">
-      <img src="../assets/cnodejs_light.svg">
+      <router-link :to="{name:'root'}">
+        <img src="../assets/cnodejs_light.svg">
+      </router-link>
     </a>
     <div class="toplist">
       <ul>
