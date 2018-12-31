@@ -7,7 +7,7 @@ import Slider from '../components/Slider'
 Vue.use(Router)
 
 export default new Router({
-  // mode:'history',//去掉路径上的#
+  mode:'history',//去掉路径上的#
   routes: [
     {
       name:'root',//router-link跳转时需要使用
