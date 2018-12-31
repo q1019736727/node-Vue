@@ -3,8 +3,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Axios from 'axios'
+import jquery from 'jquery'
 
 Vue.prototype.$http = Axios
+Vue.prototype.$jq = jquery
 Vue.config.productionTip = false
 
 //时间过滤器

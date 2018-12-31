@@ -38,18 +38,24 @@
               </div>
           </li>
         </ul>
+        <PageBar @changePage="handle"></PageBar>
       </div>
     </div>
 </template>
 
 <script>
+  import PageBar from './PageBar'
     export default {
         name: "Publishlist",
+        components:{
+          PageBar
+        },
         data:function () {
           return{
             postlistData:[],
             isLoading: true,
-            loading: 'loading'
+            loading: 'loading',
+            pageNum:1
           }
         },
         beforeMount:function() {
@@ -59,13 +65,17 @@
           getListData:function () {
             this.$http.get('https://cnodejs.org/api/v1/topics',{
               params: {
-                limit:40,
-                page:1
+                limit:30,
+                page:this.pageNum
               }
             }).then((response)=>{
               this.isLoading = false
               this.postlistData = response.data.data
             })
+          },
+          handle(page){
+            this.pageNum = page
+            this.getListData()
           }
         },
       filters:{

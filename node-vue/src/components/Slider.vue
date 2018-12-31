@@ -76,6 +76,12 @@
         beforeMount:function () {
           this.getData()
         },
+        watch:{
+          //监听路由
+          $route( to , from ){
+            this.getData()
+          }
+        },
         computed:{
           //创建话题
           creatPost:function () {
