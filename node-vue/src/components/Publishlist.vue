@@ -1,7 +1,7 @@
 <template>
     <div class="publish-wrapper">
       <div :class="[loading]" v-if="isLoading">
-        <img src="../assets/loading.gif" alt="">
+        <img src="static/images/loading.gif" alt="">
       </div>
       <div class="postlist" v-else>
         <ul>

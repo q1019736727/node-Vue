@@ -2,7 +2,7 @@
   <div class="topNav">
     <a href="javascript:void(0)">
       <router-link :to="{name:'root'}">
-        <img src="../assets/cnodejs_light.svg">
+        <img src="static/images/cnodejs_light.svg">
       </router-link>
     </a>
     <div class="toplist">
